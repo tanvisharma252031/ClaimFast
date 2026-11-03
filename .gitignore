@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# Python environment
+.venv/
+__pycache__/
+*.py[cod]
+
+# System files
+.DS_Store
+
+# Temporary files
+*.log
