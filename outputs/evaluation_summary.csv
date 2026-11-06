@@ -1,0 +1,6 @@
+prompt,records_evaluated,json_validity_rate,schema_validity_rate,classification_records,claim_type_accuracy,claim_type_macro_f1,urgency_accuracy,urgency_macro_f1,average_input_tokens,average_output_tokens,average_latency_seconds,claim_type_exact_match,urgency_exact_match,policy_number_exact_match,incident_date_exact_match,location_exact_match,vehicle_reg_no_exact_match,estimated_amount_inr_exact_match,injury_reported_exact_match,police_report_filed_exact_match
+zero_shot,20,1.0,1.0,20,0.95,0.9569,1.0,1.0,2569.55,333.95,10.01,0.95,1.0,1.0,1.0,0.55,1.0,1.0,1.0,1.0
+few_shot_k3,20,1.0,1.0,20,0.95,0.9569,1.0,1.0,2965.55,271.6,19.71,0.95,1.0,1.0,1.0,0.7,1.0,1.0,1.0,1.0
+few_shot_k5,20,1.0,1.0,20,0.95,0.9569,1.0,1.0,3221.55,289.5,22.23,0.95,1.0,1.0,1.0,0.75,1.0,1.0,1.0,1.0
+few_shot_k8,20,1.0,1.0,20,1.0,1.0,1.0,1.0,3577.55,264.8,23.46,1.0,1.0,1.0,1.0,0.8,1.0,1.0,0.95,1.0
+cot,20,1.0,1.0,20,1.0,1.0,1.0,1.0,1820.55,414.45,12.15,1.0,1.0,1.0,1.0,0.55,1.0,1.0,0.95,1.0

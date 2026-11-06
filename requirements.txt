@@ -1,2 +1,2 @@
 groq==1.7.0
-python-dotenv
+python-dotenv==1.2.4

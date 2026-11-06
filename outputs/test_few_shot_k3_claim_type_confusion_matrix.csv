@@ -1,0 +1,7 @@
+Actual,own_damage,third_party_liability,theft,total_loss,glass_only,not_a_claim
+own_damage,16,0,0,0,1,0
+third_party_liability,0,7,0,0,0,0
+theft,0,0,8,0,0,0
+total_loss,0,0,0,3,0,0
+glass_only,0,0,0,0,3,1
+not_a_claim,0,0,0,0,0,5
