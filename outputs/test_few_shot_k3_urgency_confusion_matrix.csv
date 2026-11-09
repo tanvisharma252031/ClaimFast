@@ -1,4 +1,5 @@
-Actual,high,medium,low
-high,6,0,0
-medium,0,32,1
-low,0,0,5
+Actual,high,medium,low,__invalid__
+high,9,0,0,0
+medium,0,42,1,0
+low,0,0,8,0
+__invalid__,0,0,0,0

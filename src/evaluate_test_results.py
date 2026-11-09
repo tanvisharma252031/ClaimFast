@@ -11,22 +11,34 @@ from sklearn.metrics import (
 )
 
 
-# ==========================================
+# =========================================================
 # 1. PROJECT CONFIGURATION
-# ==========================================
+# =========================================================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATA_DIR = BASE_DIR / "data"
 OUTPUTS_DIR = BASE_DIR / "outputs"
 
+# Six strategies. Zero-shot points to the revised V2 output.
 PROMPT_NAMES = [
     "zero_shot",
     "few_shot_k3",
     "few_shot_k5",
     "few_shot_k8",
-    "cot"
+    "cot_original",
+    "cot_revised"
 ]
+
+# Map each strategy to its actual prediction file.
+PREDICTION_FILES = {
+    "zero_shot": "test_zero_shot_v2_results.jsonl",
+    "few_shot_k3": "test_few_shot_k3_results.jsonl",
+    "few_shot_k5": "test_few_shot_k5_results.jsonl",
+    "few_shot_k8": "test_few_shot_k8_results.jsonl",
+    "cot_original": "test_cot_results.jsonl",
+    "cot_revised": "test_cot_controlled_results.jsonl"
+}
 
 CLASSIFICATION_FIELDS = [
     "claim_type",
@@ -61,16 +73,18 @@ VALID_URGENCIES = [
 ]
 
 
-# ==========================================
+# =========================================================
 # 2. LOAD TEST DATASET
-# ==========================================
+# =========================================================
 
 def load_test_data():
 
     dataset_path = DATA_DIR / "test.jsonl"
 
     if not dataset_path.exists():
-        raise FileNotFoundError(dataset_path)
+        raise FileNotFoundError(
+            f"Test dataset not found: {dataset_path}"
+        )
 
     records = {}
 
@@ -81,7 +95,14 @@ def load_test_data():
             if not line.strip():
                 continue
 
-            record = json.loads(line)
+            try:
+                record = json.loads(line)
+
+            except json.JSONDecodeError as error:
+                raise ValueError(
+                    f"Invalid JSON in test.jsonl, line "
+                    f"{line_number}: {error}"
+                ) from error
 
             records[record["id"]] = {
                 "message": record["message"],
@@ -93,17 +114,19 @@ def load_test_data():
     return records
 
 
-# ==========================================
-# 3. LOAD TEST PREDICTIONS
-# ==========================================
+# =========================================================
+# 3. LOAD PREDICTIONS
+# =========================================================
 
 def load_predictions(prompt_name):
 
-    output_path = OUTPUTS_DIR / (
-        f"test_{prompt_name}_results.jsonl"
-    )
+    filename = PREDICTION_FILES[prompt_name]
+    output_path = OUTPUTS_DIR / filename
 
     if not output_path.exists():
+
+        print(f"WARNING: Prediction file missing: {filename}")
+
         return {}
 
     predictions = {}
@@ -117,6 +140,7 @@ def load_predictions(prompt_name):
 
             try:
                 result = json.loads(line)
+
             except json.JSONDecodeError:
                 continue
 
@@ -136,19 +160,20 @@ def load_predictions(prompt_name):
 
             timestamp = result.get("timestamp", "")
 
-            old_result = predictions.get(record_id)
+            previous = predictions.get(record_id)
 
-            if old_result is None or timestamp >= old_result.get(
-                "timestamp", ""
+            if (
+                previous is None
+                or timestamp >= previous.get("timestamp", "")
             ):
                 predictions[record_id] = result
 
     return predictions
 
 
-# ==========================================
+# =========================================================
 # 4. SCHEMA VALIDATION
-# ==========================================
+# =========================================================
 
 def validate_schema(prediction):
 
@@ -158,7 +183,13 @@ def validate_schema(prediction):
     if set(prediction.keys()) != set(REQUIRED_FIELDS):
         return False
 
+    if not isinstance(prediction.get("claim_type"), str):
+        return False
+
     if prediction["claim_type"] not in VALID_CLAIM_TYPES:
+        return False
+
+    if not isinstance(prediction.get("urgency"), str):
         return False
 
     if prediction["urgency"] not in VALID_URGENCIES:
@@ -166,7 +197,7 @@ def validate_schema(prediction):
 
     for field in EXTRACTION_FIELDS:
 
-        value = prediction[field]
+        value = prediction.get(field)
 
         if value is None:
             continue
@@ -177,24 +208,26 @@ def validate_schema(prediction):
             "location",
             "vehicle_reg_no"
         ]:
+
             if not isinstance(value, str):
                 return False
 
         elif field == "estimated_amount_inr":
 
-            if isinstance(value, bool) or not isinstance(value, int):
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
                 return False
 
         elif field in [
             "injury_reported",
             "police_report_filed"
         ]:
+
             if not isinstance(value, bool):
                 return False
 
-    if prediction["vehicle_reg_no"] is not None:
+    registration = prediction.get("vehicle_reg_no")
 
-        registration = prediction["vehicle_reg_no"]
+    if registration is not None:
 
         if registration != registration.upper():
             return False
@@ -202,15 +235,14 @@ def validate_schema(prediction):
         if " " in registration:
             return False
 
-    if prediction["incident_date"] is not None:
+    incident_date = prediction.get("incident_date")
+
+    if incident_date is not None:
+
+        from datetime import datetime
 
         try:
-            from datetime import datetime
-
-            datetime.strptime(
-                prediction["incident_date"],
-                "%Y-%m-%d"
-            )
+            datetime.strptime(incident_date, "%Y-%m-%d")
 
         except ValueError:
             return False
@@ -218,9 +250,9 @@ def validate_schema(prediction):
     return True
 
 
-# ==========================================
+# =========================================================
 # 5. NORMALISE VALUES
-# ==========================================
+# =========================================================
 
 def normalize(value):
 
@@ -240,9 +272,9 @@ def normalize(value):
     )
 
 
-# ==========================================
+# =========================================================
 # 6. EXTRACTION METRICS
-# ==========================================
+# =========================================================
 
 def calculate_extraction_metrics(gold_values, predicted_values):
 
@@ -268,6 +300,7 @@ def calculate_extraction_metrics(gold_values, predicted_values):
 
             if normalize(gold) == normalize(predicted):
                 true_positive += 1
+
             else:
                 false_positive += 1
                 false_negative += 1
@@ -305,17 +338,17 @@ def calculate_extraction_metrics(gold_values, predicted_values):
     }
 
 
-# ==========================================
+# =========================================================
 # 7. HALLUCINATION HEURISTIC
-# ==========================================
+# =========================================================
 
 def value_supported_by_message(field, value, message):
 
     if value is None:
         return True
 
-    # Boolean values require semantic interpretation.
-    # Dates may be normalised from written date formats.
+    # These fields can require semantic interpretation
+    # or date normalisation, so they are not checked lexically.
     if field in [
         "incident_date",
         "injury_reported",
@@ -332,7 +365,6 @@ def value_supported_by_message(field, value, message):
     if value_normalized in message_normalized:
         return True
 
-    # Check numeric amounts without currency punctuation.
     if field == "estimated_amount_inr":
 
         digits = re.sub(r"\D", "", str(value))
@@ -382,9 +414,9 @@ def calculate_hallucination_metrics(rows):
     }
 
 
-# ==========================================
+# =========================================================
 # 8. EVALUATE ONE PROMPT STRATEGY
-# ==========================================
+# =========================================================
 
 def evaluate_strategy(prompt_name, test_data):
 
@@ -420,27 +452,33 @@ def evaluate_strategy(prompt_name, test_data):
 
     summary = {
         "prompt_strategy": prompt_name,
+        "prediction_file": PREDICTION_FILES[prompt_name],
         "records_expected": len(test_data),
         "records_evaluated": len(rows),
         "missing_records": len(test_data) - len(rows),
+
         "json_validity": (
             sum(row["json_valid"] for row in rows) / len(rows)
             if rows else 0
         ),
+
         "schema_validity": (
             sum(row["schema_valid"] for row in rows) / len(rows)
             if rows else 0
         )
     }
 
-    # --------------------------------------
+    # -----------------------------------------------------
     # CLASSIFICATION METRICS
-    # --------------------------------------
+    # -----------------------------------------------------
 
     for field, valid_labels in [
         ("claim_type", VALID_CLAIM_TYPES),
         ("urgency", VALID_URGENCIES)
     ]:
+
+        if not rows:
+            continue
 
         y_true = [
             row["gold"][field]
@@ -452,43 +490,43 @@ def evaluate_strategy(prompt_name, test_data):
             for row in rows
         ]
 
-        if not rows:
-            continue
-
+        # Invalid and missing predictions count as incorrect.
         safe_predictions = [
-            value if value in valid_labels else "__invalid__"
+            value if isinstance(value, str) and value in valid_labels
+            else "__invalid__"
             for value in y_pred
         ]
 
         summary[f"{field}_accuracy"] = accuracy_score(
             y_true,
-            y_pred
+            safe_predictions
         )
 
-        precision, recall, f1, _ = (
-            precision_recall_fscore_support(
-                y_true,
-                safe_predictions,
-                labels=valid_labels,
-                average="macro",
-                zero_division=0
-            )
+        precision, recall, f1, _ = precision_recall_fscore_support(
+            y_true,
+            safe_predictions,
+            labels=valid_labels,
+            average="macro",
+            zero_division=0
         )
 
         summary[f"{field}_macro_precision"] = precision
         summary[f"{field}_macro_recall"] = recall
         summary[f"{field}_macro_f1"] = f1
 
+        # Include invalid predictions as a separate confusion-matrix column.
+        matrix_labels = valid_labels + ["__invalid__"]
+
         matrix = confusion_matrix(
             y_true,
             safe_predictions,
-            labels=valid_labels
+            labels=matrix_labels
         )
 
         matrix_df = pd.DataFrame(
             matrix,
-            index=valid_labels,
-            columns=valid_labels
+            index=matrix_labels,
+            columns=matrix_labels
         )
 
         matrix_df.index.name = "Actual"
@@ -499,9 +537,9 @@ def evaluate_strategy(prompt_name, test_data):
             f"test_{prompt_name}_{field}_confusion_matrix.csv"
         )
 
-    # --------------------------------------
+    # -----------------------------------------------------
     # EXTRACTION METRICS
-    # --------------------------------------
+    # -----------------------------------------------------
 
     all_gold = []
     all_predicted = []
@@ -509,7 +547,7 @@ def evaluate_strategy(prompt_name, test_data):
     for field in EXTRACTION_FIELDS:
 
         gold_values = [
-            row["gold"][field]
+            row["gold"].get(field)
             for row in rows
         ]
 
@@ -524,7 +562,6 @@ def evaluate_strategy(prompt_name, test_data):
         )
 
         for metric_name, value in metrics.items():
-
             summary[f"{field}_{metric_name}"] = value
 
         all_gold.extend(gold_values)
@@ -540,13 +577,13 @@ def evaluate_strategy(prompt_name, test_data):
     summary["overall_extraction_recall"] = overall["recall"]
     summary["overall_extraction_f1"] = overall["f1"]
 
-    # --------------------------------------
+    # -----------------------------------------------------
     # INJURY RECALL
-    # --------------------------------------
+    # -----------------------------------------------------
 
     injury_cases = [
         row for row in rows
-        if row["gold"]["injury_reported"] is True
+        if row["gold"].get("injury_reported") is True
     ]
 
     injury_detected = sum(
@@ -561,13 +598,13 @@ def evaluate_strategy(prompt_name, test_data):
         if injury_cases else 0
     )
 
-    # --------------------------------------
+    # -----------------------------------------------------
     # HIGH URGENCY RECALL
-    # --------------------------------------
+    # -----------------------------------------------------
 
     high_cases = [
         row for row in rows
-        if row["gold"]["urgency"] == "high"
+        if row["gold"].get("urgency") == "high"
     ]
 
     high_detected = sum(
@@ -582,9 +619,9 @@ def evaluate_strategy(prompt_name, test_data):
         if high_cases else 0
     )
 
-    # --------------------------------------
+    # -----------------------------------------------------
     # LATENCY AND TOKEN USAGE
-    # --------------------------------------
+    # -----------------------------------------------------
 
     latencies = [
         row["latency"]
@@ -623,9 +660,9 @@ def evaluate_strategy(prompt_name, test_data):
         sum(input_tokens) + sum(output_tokens)
     )
 
-    # --------------------------------------
+    # -----------------------------------------------------
     # HALLUCINATION HEURISTIC
-    # --------------------------------------
+    # -----------------------------------------------------
 
     summary.update(
         calculate_hallucination_metrics(rows)
@@ -634,9 +671,9 @@ def evaluate_strategy(prompt_name, test_data):
     return summary, rows
 
 
-# ==========================================
-# 9. SAVE DETAILED EVALUATION
-# ==========================================
+# =========================================================
+# 9. CREATE DETAILED EVALUATION ROWS
+# =========================================================
 
 def create_detailed_rows(prompt_name, rows):
 
@@ -656,7 +693,7 @@ def create_detailed_rows(prompt_name, rows):
 
         for field in REQUIRED_FIELDS:
 
-            gold = row["gold"][field]
+            gold = row["gold"].get(field)
             predicted = row["prediction"].get(field)
 
             detail[f"gold_{field}"] = gold
@@ -671,9 +708,9 @@ def create_detailed_rows(prompt_name, rows):
     return details
 
 
-# ==========================================
+# =========================================================
 # 10. RUN ALL EVALUATIONS
-# ==========================================
+# =========================================================
 
 def main():
 
@@ -691,6 +728,9 @@ def main():
     print("       CLAIMFAST TEST EVALUATION")
     print("==========================================")
 
+    print("\nZero-shot source:")
+    print(PREDICTION_FILES["zero_shot"])
+
     for prompt_name in PROMPT_NAMES:
 
         print("\n" + "=" * 50)
@@ -706,6 +746,11 @@ def main():
 
         all_details.extend(
             create_detailed_rows(prompt_name, rows)
+        )
+
+        print(
+            f"Prediction file: "
+            f"{PREDICTION_FILES[prompt_name]}"
         )
 
         print(
@@ -768,30 +813,52 @@ def main():
                 f"{summary['average_latency_seconds']:.2f}s"
             )
 
-    # Save summary
+    # -----------------------------------------------------
+    # SAVE SUMMARY CSV
+    # -----------------------------------------------------
+
     pd.DataFrame(summaries).to_csv(
         OUTPUTS_DIR / "test_evaluation_summary.csv",
         index=False
     )
 
-    # Save detailed evaluation
+    # -----------------------------------------------------
+    # SAVE DETAILED CSV
+    # -----------------------------------------------------
+
     pd.DataFrame(all_details).to_csv(
         OUTPUTS_DIR / "test_detailed_evaluation.csv",
         index=False
     )
 
+    # -----------------------------------------------------
+    # FINAL STATUS
+    # -----------------------------------------------------
+
     print("\n==========================================")
     print("       TEST EVALUATION COMPLETED")
     print("==========================================")
 
-    print("Files saved in outputs/:")
+    print("\nStrategy coverage:")
+
+    for summary in summaries:
+
+        print(
+            f"{summary['prompt_strategy']}: "
+            f"{summary['records_evaluated']}/"
+            f"{summary['records_expected']} records"
+        )
+
+    print("\nFiles saved in outputs/:")
+
     print("- test_evaluation_summary.csv")
     print("- test_detailed_evaluation.csv")
-    print("- Test confusion matrix CSV files")
+    print("- Six strategy-specific confusion matrix pairs")
 
     print(
         "\nMissing predictions are excluded from scoring. "
-        "Check missing_records before interpreting results."
+        "Within evaluated records, missing/invalid classification "
+        "values are counted as incorrect."
     )
 
     print(
@@ -801,9 +868,9 @@ def main():
     )
 
 
-# ==========================================
+# =========================================================
 # 11. PROGRAM ENTRY POINT
-# ==========================================
+# =========================================================
 
 if __name__ == "__main__":
     main()

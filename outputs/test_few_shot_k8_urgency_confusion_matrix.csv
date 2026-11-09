@@ -1,0 +1,5 @@
+Actual,high,medium,low,__invalid__
+high,8,0,0,1
+medium,0,42,1,0
+low,0,0,8,0
+__invalid__,0,0,0,0

@@ -6,8 +6,12 @@ from pathlib import Path
 from datetime import datetime
 
 from dotenv import load_dotenv
-from groq import Groq
-from groq import RateLimitError, APIConnectionError, InternalServerError
+from groq import (
+    Groq,
+    RateLimitError,
+    APIConnectionError,
+    InternalServerError
+)
 
 
 # ==========================================
@@ -22,68 +26,82 @@ OUTPUTS_DIR = BASE_DIR / "outputs"
 
 load_dotenv(BASE_DIR / ".env")
 
-api_key = os.getenv("GROQ_API_KEY")
+API_KEY = os.getenv("GROQ_API_KEY")
 
-if not api_key:
-    raise ValueError("GROQ_API_KEY is missing. Check your .env file.")
-
-client = Groq(api_key=api_key)
+if not API_KEY:
+    raise ValueError(
+        "GROQ_API_KEY is missing. Check your .env file."
+    )
 
 MODEL = "openai/gpt-oss-20b"
 TEMPERATURE = 0
 REQUEST_DELAY = 3
-MAX_RETRIES = 3
+
+DATASET_NAME = "test.jsonl"
+
+# Configure the prompt through terminal environment variables.
+PROMPT_FILE = os.getenv("PROMPT_FILE", "zero_shot.txt")
+PROMPT_NAME = os.getenv("PROMPT_NAME", "zero_shot_v2")
+PROMPT_VERSION = os.getenv(
+    "PROMPT_VERSION",
+    "updated_classification_priority"
+)
+OUTPUT_STEM = os.getenv(
+    "OUTPUT_STEM",
+    "test_zero_shot_v2"
+)
+
+# Select run using terminal: RUN_NUMBER=2 or RUN_NUMBER=3
+RUN_NUMBER = int(os.getenv("RUN_NUMBER", "1"))
+
+if RUN_NUMBER not in (1, 2, 3):
+    raise ValueError("RUN_NUMBER must be 1, 2, or 3.")
+
+# Each run gets a separate output file.
+if RUN_NUMBER == 1:
+    OUTPUT_FILENAME = f"{OUTPUT_STEM}_results.jsonl"
+else:
+    OUTPUT_FILENAME = (
+        f"{OUTPUT_STEM}_run{RUN_NUMBER}_results.jsonl"
+    )
+
+client = Groq(api_key=API_KEY)
 
 
 # ==========================================
-# 2. PROMPT CONFIGURATION
+# 2. LOAD PROMPT
 # ==========================================
 
-PROMPT_FILES = [
-    "zero_shot.txt",
-    "few_shot_k3.txt",
-    "few_shot_k5.txt",
-    "few_shot_k8.txt",
-    "cot.txt"
-]
+def load_prompt(message):
 
-RUNS_PER_MESSAGE = 1
-
-
-# ==========================================
-# 3. LOAD PROMPTS
-# ==========================================
-
-def load_prompt(prompt_name, message):
-
-    prompt_path = PROMPTS_DIR / prompt_name
+    prompt_path = PROMPTS_DIR / PROMPT_FILE
 
     if not prompt_path.exists():
         raise FileNotFoundError(
-            f"Prompt file not found: {prompt_path}"
+            f"Prompt not found: {prompt_path}"
         )
 
     template = prompt_path.read_text(encoding="utf-8")
 
     if "{message}" not in template:
         raise ValueError(
-            f"{{message}} placeholder missing in {prompt_name}"
+            f"{{message}} placeholder missing in {PROMPT_FILE}"
         )
 
     return template.replace("{message}", message)
 
 
 # ==========================================
-# 4. LOAD DATASET
+# 3. LOAD TEST DATASET
 # ==========================================
 
-def load_dataset(dataset_name):
+def load_dataset():
 
-    dataset_path = DATA_DIR / dataset_name
+    dataset_path = DATA_DIR / DATASET_NAME
 
     if not dataset_path.exists():
         raise FileNotFoundError(
-            f"Dataset file not found: {dataset_path}"
+            f"Dataset not found: {dataset_path}"
         )
 
     records = []
@@ -92,128 +110,112 @@ def load_dataset(dataset_name):
 
         for line_number, line in enumerate(file, start=1):
 
-            if line.strip():
-                try:
-                    records.append(json.loads(line))
-                except json.JSONDecodeError as error:
-                    raise ValueError(
-                        f"Invalid JSON at line {line_number}: {error}"
-                    )
+            if not line.strip():
+                continue
 
-    if not records:
-        raise ValueError("Dataset is empty.")
+            try:
+                records.append(json.loads(line))
+
+            except json.JSONDecodeError as error:
+                raise ValueError(
+                    f"Invalid JSON at line {line_number}: {error}"
+                )
+
+    if len(records) != 60:
+        raise ValueError(
+            f"Expected 60 TEST records, found {len(records)}."
+        )
 
     return records
 
 
 # ==========================================
-# 5. GROQ API CALL WITH RETRIES
+# 4. CALL GROQ API
 # ==========================================
 
 def call_groq(prompt):
 
-    for attempt in range(MAX_RETRIES):
+    start_time = time.perf_counter()
 
-        try:
-
-            start_time = time.perf_counter()
-
-            response = client.chat.completions.create(
-                model=MODEL,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                temperature=TEMPERATURE
-            )
-
-            latency = time.perf_counter() - start_time
-
-            return {
-                "raw_output": response.choices[0].message.content,
-                "input_tokens": response.usage.prompt_tokens,
-                "output_tokens": response.usage.completion_tokens,
-                "latency_seconds": round(latency, 4)
+    response = client.chat.completions.create(
+        model=MODEL,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
             }
+        ],
+        temperature=TEMPERATURE
+    )
 
-        except (RateLimitError, APIConnectionError, InternalServerError) as error:
+    latency = time.perf_counter() - start_time
 
-            if attempt == MAX_RETRIES - 1:
-                raise
+    usage = response.usage
 
-            wait_time = 5 * (attempt + 1)
-
-            print(
-                f"Temporary API error. "
-                f"Retrying in {wait_time} seconds..."
-            )
-
-            time.sleep(wait_time)
+    return {
+        "raw_output": response.choices[0].message.content or "",
+        "input_tokens": usage.prompt_tokens if usage else None,
+        "output_tokens": usage.completion_tokens if usage else None,
+        "latency_seconds": round(latency, 4)
+    }
 
 
 # ==========================================
-# 6. PARSE MODEL OUTPUT
+# 5. PARSE JSON OUTPUT
 # ==========================================
 
-def parse_model_output(raw_output, prompt_name):
+def parse_model_output(raw_output):
+
+    if not isinstance(raw_output, str):
+        return None, False
+
+    text = raw_output.strip()
+
+    # Remove Markdown code fences if present.
+    if text.startswith("```"):
+
+        lines = text.splitlines()
+
+        if lines and lines[0].strip().startswith("```"):
+            lines = lines[1:]
+
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+
+        text = "\n".join(lines).strip()
 
     try:
 
-        if prompt_name == "cot.txt":
+        parsed = json.loads(text)
 
-            if "<answer>" not in raw_output or "</answer>" not in raw_output:
-                return None, False
+        if isinstance(parsed, dict):
+            return parsed, True
 
-            json_text = raw_output.split(
-                "<answer>", 1
-            )[1].split(
-                "</answer>", 1
-            )[0].strip()
+    except json.JSONDecodeError:
+        pass
 
-        else:
+    # Try extracting a JSON object from surrounding text.
+    start = text.find("{")
+    end = text.rfind("}")
 
-            json_text = raw_output.strip()
+    if start != -1 and end > start:
 
-            if json_text.startswith("```"):
+        try:
 
-                lines = json_text.splitlines()
+            parsed = json.loads(text[start:end + 1])
 
-                if lines and lines[0].startswith("```"):
-                    lines = lines[1:]
+            if isinstance(parsed, dict):
+                return parsed, True
 
-                if lines and lines[-1].strip() == "```":
-                    lines = lines[:-1]
+        except json.JSONDecodeError:
+            pass
 
-                json_text = "\n".join(lines).strip()
-
-        parsed_output = json.loads(json_text)
-
-        if not isinstance(parsed_output, dict):
-            return None, False
-
-        return parsed_output, True
-
-    except (json.JSONDecodeError, AttributeError, TypeError):
-
-        return None, False
+    return None, False
 
 
 # ==========================================
-# 7. OUTPUT FILE MANAGEMENT
+# 6. LOAD COMPLETED RECORDS
 # ==========================================
-
-def get_output_path(prompt_name, dataset_name):
-
-    dataset_prefix = Path(dataset_name).stem
-
-    strategy_name = Path(prompt_name).stem
-
-    return OUTPUTS_DIR / (
-        f"{dataset_prefix}_{strategy_name}_results.jsonl"
-    )
-
 
 def load_completed_runs(output_path):
 
@@ -230,21 +232,25 @@ def load_completed_runs(output_path):
                 continue
 
             try:
+
                 result = json.loads(line)
 
-                if result.get("status") == "success":
-                    completed.add(
-                        (
-                            result.get("record_id"),
-                            result.get("run_number")
-                        )
-                    )
+                if (
+                    result.get("status") == "success"
+                    and result.get("run_number") == RUN_NUMBER
+                ):
+
+                    completed.add(result.get("record_id"))
 
             except json.JSONDecodeError:
                 continue
 
     return completed
 
+
+# ==========================================
+# 7. SAVE RESULTS
+# ==========================================
 
 def save_result(result, output_path):
 
@@ -258,175 +264,136 @@ def save_result(result, output_path):
 
 
 # ==========================================
-# 8. MAIN EXPERIMENT RUNNER
+# 8. RUN EXPERIMENT
 # ==========================================
 
-def run_experiment(
-    dataset_name="dev.jsonl",
-    start_index=0,
-    record_limit=None
-):
+def run_experiment():
 
-    records = load_dataset(dataset_name)
+    records = load_dataset()
 
-    if record_limit is None:
-        selected_records = records[start_index:]
-    else:
-        selected_records = records[
-            start_index:start_index + record_limit
-        ]
+    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    if not selected_records:
-        raise ValueError("No records selected.")
+    output_path = OUTPUTS_DIR / OUTPUT_FILENAME
+
+    completed = load_completed_runs(output_path)
 
     print("\n==========================================")
-    print("       CLAIMFAST PROMPT EXPERIMENT")
+    print(f"       CLAIMFAST {PROMPT_NAME.upper()}")
     print("==========================================")
 
-    print(f"Dataset: {dataset_name}")
-    print(f"Records loaded: {len(selected_records)}")
-    print(f"First record: {selected_records[0]['id']}")
-    print(f"Last record: {selected_records[-1]['id']}")
-    print(f"Prompt strategies: {len(PROMPT_FILES)}")
-    print(f"Runs per message: {RUNS_PER_MESSAGE}")
+    print(f"Dataset: {DATASET_NAME}")
+    print(f"Records: {len(records)}")
+    print(f"Prompt: {PROMPT_FILE}")
+    print(f"Model: {MODEL}")
+    print(f"Temperature: {TEMPERATURE}")
+    print(f"Run number: {RUN_NUMBER}")
+    print(f"Already completed: {len(completed)}/60")
+    print(f"Output: {OUTPUT_FILENAME}")
 
-    total_calls = (
-        len(selected_records)
-        * len(PROMPT_FILES)
-        * RUNS_PER_MESSAGE
-    )
+    new_successes = 0
+    skipped = 0
+    failures = 0
 
-    completed_calls = 0
-    skipped_calls = 0
-    failed_calls = 0
+    for record in records:
 
-    print(f"Total planned calls: {total_calls}")
+        record_id = record["id"]
+        message = record["message"]
 
-    for prompt_name in PROMPT_FILES:
+        if record_id in completed:
 
-        output_path = get_output_path(
-            prompt_name,
-            dataset_name
-        )
+            skipped += 1
 
-        completed = load_completed_runs(output_path)
-
-        print("\n" + "=" * 50)
-        print(f"Running strategy: {prompt_name}")
-        print("=" * 50)
-
-        for record in selected_records:
-
-            record_id = record["id"]
-            message = record["message"]
-
-            prompt = load_prompt(
-                prompt_name,
-                message
+            print(
+                f"{record_id} | Already completed — skipped"
             )
 
-            for run_number in range(1, RUNS_PER_MESSAGE + 1):
+            continue
 
-                run_key = (record_id, run_number)
+        try:
 
-                if run_key in completed:
+            prompt = load_prompt(message)
 
-                    skipped_calls += 1
+            metrics = call_groq(prompt)
 
-                    print(
-                        f"{record_id} | Run {run_number} | Already completed - skipped"
-                    )
+            parsed_output, json_valid = parse_model_output(
+                metrics["raw_output"]
+            )
 
-                    continue
+            result = {
+                "record_id": record_id,
+                "prompt_name": PROMPT_NAME,
+                "prompt_version": PROMPT_VERSION,
+                "run_number": RUN_NUMBER,
+                "dataset": DATASET_NAME,
+                "timestamp": datetime.now().isoformat(),
+                "model": MODEL,
+                "temperature": TEMPERATURE,
+                "raw_output": metrics["raw_output"],
+                "parsed_output": parsed_output,
+                "json_valid": json_valid,
+                "input_tokens": metrics["input_tokens"],
+                "output_tokens": metrics["output_tokens"],
+                "latency_seconds": metrics["latency_seconds"],
+                "status": "success"
+            }
 
-                try:
+            save_result(result, output_path)
 
-                    metrics = call_groq(prompt)
+            completed.add(record_id)
+            new_successes += 1
 
-                    parsed_output, json_valid = parse_model_output(
-                        metrics["raw_output"],
-                        prompt_name
-                    )
+            print(
+                f"{record_id} | "
+                f"JSON valid: {json_valid} | "
+                f"Latency: {metrics['latency_seconds']}s"
+            )
 
-                    result = {
-                        "record_id": record_id,
-                        "prompt_name": prompt_name,
-                        "run_number": run_number,
-                        "dataset": dataset_name,
-                        "timestamp": datetime.now().isoformat(),
-                        "model": MODEL,
-                        "temperature": TEMPERATURE,
-                        "raw_output": metrics["raw_output"],
-                        "parsed_output": parsed_output,
-                        "json_valid": json_valid,
-                        "input_tokens": metrics["input_tokens"],
-                        "output_tokens": metrics["output_tokens"],
-                        "latency_seconds": metrics["latency_seconds"],
-                        "status": "success"
-                    }
+            time.sleep(REQUEST_DELAY)
 
-                    save_result(result, output_path)
+        except RateLimitError as error:
 
-                    completed.add(run_key)
-                    completed_calls += 1
+            failures += 1
 
-                    print(
-                        f"{record_id} | "
-                        f"Run {run_number} | "
-                        f"JSON valid: {json_valid} | "
-                        f"Latency: {metrics['latency_seconds']}s"
-                    )
+            print("\nGROQ RATE LIMIT REACHED.")
+            print("Stopping safely. Saved results are preserved.")
+            print(error)
 
-                except Exception as error:
+            break
 
-                    failed_calls += 1
+        except (APIConnectionError, InternalServerError) as error:
 
-                    error_result = {
-                        "record_id": record_id,
-                        "prompt_name": prompt_name,
-                        "run_number": run_number,
-                        "dataset": dataset_name,
-                        "timestamp": datetime.now().isoformat(),
-                        "model": MODEL,
-                        "status": "failed",
-                        "error": str(error)
-                    }
+            failures += 1
 
-                    save_result(error_result, output_path)
+            print(f"\nAPI ERROR at {record_id}: {error}")
+            print("Stopping safely. Re-run later to resume.")
 
-                    print(
-                        f"ERROR | {record_id} | "
-                        f"Run {run_number} | {error}"
-                    )
+            break
 
-                time.sleep(REQUEST_DELAY)
+        except Exception as error:
 
-    # ======================================
-    # 9. EXPERIMENT SUMMARY
-    # ======================================
+            failures += 1
+
+            print(
+                f"ERROR | {record_id} | "
+                f"{type(error).__name__}: {error}"
+            )
 
     print("\n==========================================")
-    print("          EXPERIMENT SUMMARY")
+    print("          RUN SUMMARY")
     print("==========================================")
 
-    print(f"Planned API calls: {total_calls}")
-    print(f"New successful calls: {completed_calls}")
-    print(f"Previously completed calls skipped: {skipped_calls}")
-    print(f"Failed calls: {failed_calls}")
-
-    print(f"Results saved in: {OUTPUTS_DIR}")
-
-    print("\nExperiment completed!")
+    print(f"Total TEST records: {len(records)}")
+    print(f"New successful calls: {new_successes}")
+    print(f"Skipped records: {skipped}")
+    print(f"Errors: {failures}")
+    print(f"Completed: {len(completed)}/60")
+    print(f"Saved to: {output_path}")
 
 
 # ==========================================
-# 10. PROGRAM ENTRY POINT
+# 9. MAIN
 # ==========================================
 
 if __name__ == "__main__":
 
-    run_experiment(
-        dataset_name="test.jsonl",
-        start_index=0,
-        record_limit=None
-    )
+    run_experiment()

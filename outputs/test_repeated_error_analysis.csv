@@ -1,0 +1,493 @@
+prompt_strategy,run,record_id,error_category,field_name,expected_value,predicted_value,severity,analysis
+zero_shot_v2,1,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,1,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST011,Location wording mismatch,location,Dadar,near Dadar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+zero_shot_v2,1,TEST021,Location wording mismatch,location,Ghatkopar,near Ghatkopar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST027,Location wording mismatch,location,Kurla,near Kurla,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,1,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+zero_shot_v2,1,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+zero_shot_v2,1,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,1,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST052,Location omission,location,Outside the gym,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,1,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,1,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+zero_shot_v2,1,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,2,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST011,Location wording mismatch,location,Dadar,near Dadar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+zero_shot_v2,2,TEST021,Location wording mismatch,location,Ghatkopar,near Ghatkopar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST022,Location omission,location,Outside the restaurant,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,2,TEST027,Location wording mismatch,location,Kurla,near Kurla,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,2,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST042,Location wording mismatch,location,Apartment parking,my apartment parking,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+zero_shot_v2,2,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+zero_shot_v2,2,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST048,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+zero_shot_v2,2,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,2,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,2,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+zero_shot_v2,2,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,3,TEST004,Location omission,location,Near the market,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,3,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST011,Location wording mismatch,location,Dadar,near Dadar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+zero_shot_v2,3,TEST021,Location wording mismatch,location,Ghatkopar,near Ghatkopar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST027,Location wording mismatch,location,Kurla,near Kurla,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,3,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST042,Location wording mismatch,location,Apartment parking,my apartment parking,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+zero_shot_v2,3,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+zero_shot_v2,3,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+zero_shot_v2,3,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+zero_shot_v2,3,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+zero_shot_v2,3,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,1,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST010,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,1,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,1,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k3,1,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k3,1,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,1,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k3,1,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k3,1,TEST045,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,1,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,1,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,1,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k3,1,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,2,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST007,Classification error,claim_type,own_damage,third_party_liability,High,"Expected own_damage, received third_party_liability."
+few_shot_k3,2,TEST008,Classification error,claim_type,theft,glass_only,High,"Expected theft, received glass_only."
+few_shot_k3,2,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST008,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,2,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST010,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,2,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,2,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k3,2,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k3,2,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,2,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k3,2,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k3,2,TEST045,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,2,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,2,TEST049,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,2,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,2,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k3,2,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,3,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST008,Location omission,location,Outside my building,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,3,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST010,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,3,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,3,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k3,3,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k3,3,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,3,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k3,3,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k3,3,TEST045,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,3,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k3,3,TEST049,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k3,3,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k3,3,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k3,3,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,1,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST009,Location wording mismatch,location,Near the airport,the airport,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k5,1,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k5,1,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,1,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k5,1,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k5,1,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,1,TEST051,Classification error,claim_type,own_damage,third_party_liability,High,"Expected own_damage, received third_party_liability."
+few_shot_k5,1,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,1,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k5,1,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,2,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST009,Location wording mismatch,location,Near the airport,the airport,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k5,2,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k5,2,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,2,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k5,2,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k5,2,TEST043,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k5,2,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST048,Classification error,claim_type,theft,own_damage,High,"Expected theft, received own_damage."
+few_shot_k5,2,TEST048,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k5,2,TEST049,Location wording mismatch,location,At a traffic signal,traffic signal,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,2,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k5,2,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,3,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST009,Location wording mismatch,location,Near the airport,the airport,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k5,3,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k5,3,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k5,3,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k5,3,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k5,3,TEST043,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k5,3,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST048,Classification error,claim_type,theft,own_damage,High,"Expected theft, received own_damage."
+few_shot_k5,3,TEST048,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k5,3,TEST049,Location wording mismatch,location,At a traffic signal,traffic signal,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k5,3,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k5,3,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k8,1,TEST004,Location wording mismatch,location,Near the market,market,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST009,Location wording mismatch,location,Near the airport,airport,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k8,1,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k8,1,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k8,1,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k8,1,TEST032,Invalid or missing JSON,JSON,Valid JSON object,,High,The model output could not be parsed as a JSON object.
+few_shot_k8,1,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k8,1,TEST043,Potential unsupported extraction,location,,office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k8,1,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST046,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k8,1,TEST049,Location wording mismatch,location,At a traffic signal,traffic signal,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,1,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k8,1,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k8,2,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST009,Location wording mismatch,location,Near the airport,Airport,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k8,2,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k8,2,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k8,2,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k8,2,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k8,2,TEST043,Potential unsupported extraction,location,,office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k8,2,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST049,Location wording mismatch,location,At a traffic signal,traffic signal,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,2,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k8,2,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k8,3,TEST004,Location wording mismatch,location,Near the market,market,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST009,Location wording mismatch,location,Near the airport,Airport,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST016,Location wording mismatch,location,Near the bus stop,bus stop,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+few_shot_k8,3,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+few_shot_k8,3,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+few_shot_k8,3,TEST022,Location formatting difference,location,Outside the restaurant,outside the restaurant,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+few_shot_k8,3,TEST032,Classification error,claim_type,third_party_liability,own_damage,High,"Expected third_party_liability, received own_damage."
+few_shot_k8,3,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST035,Location wording mismatch,location,Near our society clubhouse,society clubhouse,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST038,Location wording mismatch,location,Near the railway station,railway station,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST040,Classification error,claim_type,third_party_liability,own_damage,High,"Expected third_party_liability, received own_damage."
+few_shot_k8,3,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST043,Classification error,claim_type,own_damage,glass_only,High,"Expected own_damage, received glass_only."
+few_shot_k8,3,TEST043,Potential unsupported extraction,location,,near the office,Medium,Prediction contains a location absent from the gold label. Verify against message.
+few_shot_k8,3,TEST046,Location wording mismatch,location,Near the railway crossing,railway crossing,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST049,Location wording mismatch,location,At a traffic signal,traffic signal,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST051,Location wording mismatch,location,Near the flyover,flyover,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST056,Location wording mismatch,location,Near Airoli,Airoli,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+few_shot_k8,3,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+few_shot_k8,3,TEST059,Location wording mismatch,location,Near the petrol pump,petrol pump,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,1,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST008,Classification error,claim_type,theft,glass_only,High,"Expected theft, received glass_only."
+cot_revised,1,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST011,Location wording mismatch,location,Dadar,near Dadar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+cot_revised,1,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+cot_revised,1,TEST021,Location wording mismatch,location,Ghatkopar,near Ghatkopar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST022,Location omission,location,Outside the restaurant,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,1,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,1,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST042,Location wording mismatch,location,Apartment parking,my apartment parking,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST043,Potential unsupported extraction,location,,near home,Medium,Prediction contains a location absent from the gold label. Verify against message.
+cot_revised,1,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST049,Location wording mismatch,location,At a traffic signal,traffic signal,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,1,TEST051,Classification error,claim_type,own_damage,third_party_liability,High,"Expected own_damage, received third_party_liability."
+cot_revised,1,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST055,Location formatting difference,location,Near Juhu beach,near Juhu beach,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST056,Location formatting difference,location,Near Airoli,near Airoli,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+cot_revised,1,TEST058,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+cot_revised,1,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,2,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,2,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+cot_revised,2,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+cot_revised,2,TEST021,Location wording mismatch,location,Ghatkopar,near Ghatkopar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,2,TEST022,Location omission,location,Outside the restaurant,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,2,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,2,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,2,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST042,Location formatting difference,location,Apartment parking,apartment parking,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST043,Potential unsupported extraction,location,,near home,Medium,Prediction contains a location absent from the gold label. Verify against message.
+cot_revised,2,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,2,TEST051,Classification error,claim_type,own_damage,third_party_liability,High,"Expected own_damage, received third_party_liability."
+cot_revised,2,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST055,Location formatting difference,location,Near Juhu beach,near Juhu beach,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST056,Location formatting difference,location,Near Airoli,near Airoli,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+cot_revised,2,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,3,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,3,TEST008,Location formatting difference,location,Outside my building,outside my building,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+cot_revised,3,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+cot_revised,3,TEST021,Location wording mismatch,location,Ghatkopar,near Ghatkopar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,3,TEST022,Location omission,location,Outside the restaurant,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,3,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,3,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,3,TEST032,Location formatting difference,location,Outside the supermarket,outside the supermarket,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST042,Location wording mismatch,location,Apartment parking,my apartment parking,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,3,TEST043,Potential unsupported extraction,location,,near home,Medium,Prediction contains a location absent from the gold label. Verify against message.
+cot_revised,3,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+cot_revised,3,TEST051,Classification error,claim_type,own_damage,third_party_liability,High,"Expected own_damage, received third_party_liability."
+cot_revised,3,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_revised,3,TEST056,Location formatting difference,location,Near Airoli,near Airoli,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST057,Location formatting difference,location,Parking area,parking area,Low,Differences are limited to case or punctuation.
+cot_revised,3,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST002,Location omission,location,Workplace parking,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST004,Location formatting difference,location,Near the market,near the market,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST006,Location wording mismatch,location,Vashi,near Vashi,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_original,1,TEST008,Classification error,claim_type,theft,glass_only,High,"Expected theft, received glass_only."
+cot_original,1,TEST008,Location omission,location,Outside my building,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST009,Location formatting difference,location,Near the airport,near the airport,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST011,Location wording mismatch,location,Dadar,near Dadar,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_original,1,TEST014,Potential unsupported extraction,estimated_amount_inr,,50000,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST015,Location formatting difference,location,Society parking,society parking,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST015,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST016,Location formatting difference,location,Near the bus stop,near the bus stop,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST017,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST018,Classification error,claim_type,glass_only,not_a_claim,High,"Expected glass_only, received not_a_claim."
+cot_original,1,TEST018,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+cot_original,1,TEST019,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST022,Location omission,location,Outside the restaurant,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST022,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST026,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST027,Location wording mismatch,location,Kurla,near Kurla,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_original,1,TEST028,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST030,Location omission,location,Parking space,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST031,Location wording mismatch,location,Borivali,near Borivali,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_original,1,TEST032,Classification error,claim_type,third_party_liability,own_damage,High,"Expected third_party_liability, received own_damage."
+cot_original,1,TEST032,Urgency error,urgency,high,medium,Critical,"Expected high, received medium."
+cot_original,1,TEST032,Location omission,location,Outside the supermarket,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST033,Location formatting difference,location,Office basement parking,office basement parking,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST035,Location formatting difference,location,Near our society clubhouse,near our society clubhouse,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST037,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST038,Location formatting difference,location,Near the railway station,near the railway station,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST040,Classification error,claim_type,third_party_liability,own_damage,High,"Expected third_party_liability, received own_damage."
+cot_original,1,TEST040,Urgency error,urgency,high,medium,Critical,"Expected high, received medium."
+cot_original,1,TEST040,Location formatting difference,location,Outside the mall,outside the mall,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST040,Injury extraction error,injury_reported,True,False,High,Injury information differs from the gold label.
+cot_original,1,TEST042,Location wording mismatch,location,Apartment parking,my apartment parking,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_original,1,TEST043,Potential unsupported extraction,location,,near home,Medium,Prediction contains a location absent from the gold label. Verify against message.
+cot_original,1,TEST046,Location formatting difference,location,Near the railway crossing,near the railway crossing,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST046,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST048,Classification error,claim_type,theft,not_a_claim,High,"Expected theft, received not_a_claim."
+cot_original,1,TEST048,Urgency error,urgency,medium,low,High,"Expected medium, received low."
+cot_original,1,TEST048,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST049,Location omission,location,At a traffic signal,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST049,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST051,Classification error,claim_type,own_damage,third_party_liability,High,"Expected own_damage, received third_party_liability."
+cot_original,1,TEST051,Location formatting difference,location,Near the flyover,near the flyover,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST052,Location formatting difference,location,Outside the gym,outside the gym,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST055,Location wording mismatch,location,Near Juhu beach,Juhu beach,Low,Location wording differs. Manual review is needed to determine whether the meaning is equivalent.
+cot_original,1,TEST056,Location formatting difference,location,Near Airoli,near Airoli,Low,Differences are limited to case or punctuation.
+cot_original,1,TEST057,Location omission,location,Parking area,,Medium,"Gold label contains a location, but prediction is null."
+cot_original,1,TEST058,Potential unsupported extraction,injury_reported,,False,Medium,The prediction contains a value where the gold label is null. Verify the original message.
+cot_original,1,TEST059,Location formatting difference,location,Near the petrol pump,near the petrol pump,Low,Differences are limited to case or punctuation.

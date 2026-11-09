@@ -114,8 +114,7 @@ CLASSIFICATION PRIORITY:
 
 1. Explicitly declared total loss.
 2. Theft involving the insured vehicle or its property.
-3. Third-party injury or property damage for which the
-   insured may be liable.
+3. Third-party injury or property damage for which the insured may be liable.
 4. Glass-only damage, when no other vehicle damage is reported.
 5. Other damage to the insured vehicle.
 6. Non-claim enquiries.

@@ -1,64 +1,64 @@
 prompt_strategy,record_id,json_valid,schema_valid,latency_seconds,input_tokens,output_tokens,gold_claim_type,predicted_claim_type,claim_type_correct,gold_urgency,predicted_urgency,urgency_correct,gold_policy_number,predicted_policy_number,policy_number_correct,gold_incident_date,predicted_incident_date,incident_date_correct,gold_location,predicted_location,location_correct,gold_vehicle_reg_no,predicted_vehicle_reg_no,vehicle_reg_no_correct,gold_estimated_amount_inr,predicted_estimated_amount_inr,estimated_amount_inr_correct,gold_injury_reported,predicted_injury_reported,injury_reported_correct,gold_police_report_filed,predicted_police_report_filed,police_report_filed_correct
-zero_shot,TEST001,True,True,1.4363,2574,260,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
-zero_shot,TEST002,True,True,1.0236,2570,195,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
-zero_shot,TEST003,True,True,3.5861,2572,324,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
-zero_shot,TEST004,True,True,11.0137,2570,311,third_party_liability,third_party_liability,True,high,high,True,ABC987654,ABC987654,True,,,True,Near the market,near the market,False,,,True,,,True,True,True,True,,,True
-zero_shot,TEST005,True,True,21.3419,2567,174,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST006,True,True,16.4976,2569,300,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Vashi,near Vashi,False,,,True,,,True,False,False,True,,,True
-zero_shot,TEST007,True,True,19.0535,2576,463,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST008,True,True,20.0919,2565,989,theft,theft,True,medium,medium,True,,,True,,,True,Outside my building,outside my building,False,,,True,,,True,,,True,,,True
-zero_shot,TEST009,True,True,21.5687,2572,374,own_damage,own_damage,True,medium,medium,True,MOTOR556677,MOTOR556677,True,,,True,Near the airport,near the airport,False,,,True,32500.0,32500.0,True,,,True,,,True
-zero_shot,TEST010,True,True,22.4893,2567,231,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST011,True,True,18.8056,2578,339,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Dadar,near Dadar,False,,,True,,,True,False,False,True,,,True
-zero_shot,TEST012,True,True,14.6165,2573,433,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
-zero_shot,TEST013,True,True,23.2164,2570,394,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST014,True,True,19.5028,2574,469,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST015,True,True,1.2898,2574,399,theft,theft,True,medium,medium,True,,,True,,,True,Society parking,society parking,False,MH01XY9090,MH01XY9090,True,,,True,,,True,False,False,True
-zero_shot,TEST016,True,True,20.9595,2575,347,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the bus stop,near the bus stop,False,MH03AB1122,MH03AB1122,True,,,True,True,True,True,,,True
-zero_shot,TEST017,True,True,18.5005,2575,281,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,27000.0,27000.0,True,,,True,,,True
-zero_shot,TEST018,True,True,14.5041,2568,198,glass_only,not_a_claim,False,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST019,True,True,1.2949,2564,197,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST020,True,True,17.269,2572,214,own_damage,own_damage,True,high,high,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
-zero_shot,TEST021,True,True,1.3405,2578,564,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Ghatkopar,near Ghatkopar,False,,,True,65000.0,65000.0,True,False,False,True,,,True
-zero_shot,TEST022,True,True,1.2595,2572,494,theft,theft,True,medium,medium,True,,,True,,,True,Outside the restaurant,outside the restaurant,False,,,True,,,True,,,True,False,False,True
-zero_shot,TEST023,True,True,3.1033,2574,261,third_party_liability,third_party_liability,True,medium,medium,True,CAR908172,CAR908172,True,,,True,,,True,,,True,,,True,False,False,True,,,True
-zero_shot,TEST024,True,True,17.9751,2569,234,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST025,True,True,17.8078,2564,154,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST026,True,True,16.8604,2575,207,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST027,True,True,19.4025,2584,463,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Kurla,near Kurla,False,,,True,,,True,False,False,True,,,True
-zero_shot,TEST028,True,True,19.6237,2575,637,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,1250000.0,1250000.0,True,,,True,,,True
-zero_shot,TEST029,True,True,21.5686,2575,496,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,False,False,True
-zero_shot,TEST030,True,True,20.0342,2586,378,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Parking space,,False,MH02PQ7788,MH02PQ7788,True,,,True,False,False,True,,,True
-zero_shot,TEST031,True,True,18.1883,2574,366,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Borivali,near Borivali,False,,,True,,,True,False,False,True,,,True
-zero_shot,TEST032,True,True,19.2342,2570,413,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the supermarket,outside the supermarket,False,,,True,,,True,True,True,True,,,True
-zero_shot,TEST033,True,True,19.4042,2567,284,theft,theft,True,medium,medium,True,,,True,,,True,Office basement parking,office basement parking,False,,,True,,,True,,,True,True,True,True
-zero_shot,TEST034,True,True,19.1481,2566,161,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST035,True,True,17.1111,2578,345,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near our society clubhouse,near our society clubhouse,False,MH03KL2468,MH03KL2468,True,,,True,,,True,,,True
-zero_shot,TEST036,True,True,18.0075,2577,249,own_damage,own_damage,True,high,high,True,,,True,,,True,Lower Parel,Lower Parel,True,,,True,,,True,False,False,True,,,True
-zero_shot,TEST037,True,True,19.3175,2571,458,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,True,True,True
-zero_shot,TEST038,True,True,19.1112,2580,358,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Near the railway station,near the railway station,False,MH05RT3456,MH05RT3456,True,120000.0,120000.0,True,False,False,True,,,True
-zero_shot,TEST039,True,True,18.8209,2567,189,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST040,True,True,18.3773,2578,487,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the mall,outside the mall,False,,,True,,,True,True,True,True,,,True
-zero_shot,TEST041,True,True,2.0121,2576,291,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Santacruz,Santacruz,True,,,True,,,True,False,False,True,,,True
-zero_shot,TEST042,True,True,2.2165,2577,476,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,my apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
-zero_shot,TEST043,True,True,20.3377,2579,545,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,near home,False,,,True,,,True,,,True,,,True
-zero_shot,TEST044,True,True,20.3128,2576,389,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
-zero_shot,TEST045,True,True,18.0426,2576,377,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,,True,,,True
-zero_shot,TEST046,True,True,19.3662,2577,509,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,near the railway crossing,False,,,True,,,True,,,True,,,True
-zero_shot,TEST047,True,True,21.1111,2581,282,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
-zero_shot,TEST048,True,True,17.7203,2578,592,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST049,True,True,21.3562,2579,288,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,,False,MH04CD7788,MH04CD7788,True,,,True,,,True,,,True
-zero_shot,TEST050,True,True,18.1326,2575,211,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST051,True,True,18.5,2579,461,own_damage,third_party_liability,False,high,high,True,,,True,,,True,Near the flyover,near the flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
-zero_shot,TEST052,True,True,18.8859,2569,270,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,outside the gym,False,,,True,,,True,,,True,True,True,True
-zero_shot,TEST053,True,True,19.1363,2582,236,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
-zero_shot,TEST054,True,True,17.9628,2567,195,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST055,True,True,17.2886,2576,488,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
-zero_shot,TEST056,True,True,20.1987,2579,437,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
-zero_shot,TEST057,True,True,20.2754,2575,451,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,parking area,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
-zero_shot,TEST058,True,True,1.9071,2573,221,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
-zero_shot,TEST059,True,True,1.2096,2571,322,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,near the petrol pump,False,,,True,,,True,True,True,True,,,True
-zero_shot,TEST060,True,True,16.8545,2570,200,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST001,True,True,1.0613,2581,263,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
+zero_shot,TEST002,True,True,1.1648,2577,282,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
+zero_shot,TEST003,True,True,1.3255,2579,279,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
+zero_shot,TEST004,True,True,7.2499,2577,317,third_party_liability,third_party_liability,True,high,high,True,ABC987654,ABC987654,True,,,True,Near the market,near the market,False,,,True,,,True,True,True,True,,,True
+zero_shot,TEST005,True,True,18.889,2574,190,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST006,True,True,0.8158,2576,335,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Vashi,near Vashi,False,,,True,,,True,False,False,True,,,True
+zero_shot,TEST007,True,True,15.3136,2583,507,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST008,True,True,17.4831,2572,575,theft,theft,True,medium,medium,True,,,True,,,True,Outside my building,outside my building,False,,,True,,,True,,,True,,,True
+zero_shot,TEST009,True,True,22.9051,2579,275,own_damage,own_damage,True,medium,medium,True,MOTOR556677,MOTOR556677,True,,,True,Near the airport,near the airport,False,,,True,32500.0,32500.0,True,,,True,,,True
+zero_shot,TEST010,True,True,13.0361,2574,228,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST011,True,True,13.0992,2585,430,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Dadar,near Dadar,False,,,True,,,True,False,False,True,,,True
+zero_shot,TEST012,True,True,3.0479,2580,267,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+zero_shot,TEST013,True,True,18.2854,2577,398,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST014,True,True,19.2217,2581,493,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST015,True,True,18.0909,2581,336,theft,theft,True,medium,medium,True,,,True,,,True,Society parking,society parking,False,MH01XY9090,MH01XY9090,True,,,True,,,True,False,False,True
+zero_shot,TEST016,True,True,3.8545,2582,297,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the bus stop,near the bus stop,False,MH03AB1122,MH03AB1122,True,,,True,True,True,True,,,True
+zero_shot,TEST017,True,True,15.8125,2582,243,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,27000.0,27000.0,True,,,True,,,True
+zero_shot,TEST018,True,True,0.739,2575,298,glass_only,glass_only,True,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST019,True,True,16.621,2571,197,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST020,True,True,1.0978,2579,264,own_damage,own_damage,True,high,high,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+zero_shot,TEST021,True,True,13.7104,2585,290,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Ghatkopar,near Ghatkopar,False,,,True,65000.0,65000.0,True,False,False,True,,,True
+zero_shot,TEST022,True,True,1.1199,2579,570,theft,theft,True,medium,medium,True,,,True,,,True,Outside the restaurant,outside the restaurant,False,,,True,,,True,,,True,False,False,True
+zero_shot,TEST023,True,True,5.0176,2581,249,third_party_liability,third_party_liability,True,medium,medium,True,CAR908172,CAR908172,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+zero_shot,TEST024,True,True,18.1273,2576,228,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST025,True,True,17.1175,2571,189,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST026,True,True,14.0015,2582,225,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST027,True,True,1.0811,2591,366,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Kurla,near Kurla,False,,,True,,,True,False,False,True,,,True
+zero_shot,TEST028,True,True,2.2305,2582,516,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,1250000.0,1250000.0,True,,,True,,,True
+zero_shot,TEST029,True,True,20.1262,2582,499,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,False,False,True
+zero_shot,TEST030,True,True,2.9453,2593,295,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Parking space,,False,MH02PQ7788,MH02PQ7788,True,,,True,False,False,True,,,True
+zero_shot,TEST031,True,True,19.4876,2581,298,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Borivali,near Borivali,False,,,True,,,True,False,False,True,,,True
+zero_shot,TEST032,True,True,14.7351,2577,421,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the supermarket,outside the supermarket,False,,,True,,,True,True,True,True,,,True
+zero_shot,TEST033,True,True,1.2724,2574,415,theft,theft,True,medium,medium,True,,,True,,,True,Office basement parking,office basement parking,False,,,True,,,True,,,True,True,True,True
+zero_shot,TEST034,True,True,0.4859,2573,208,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST035,True,True,0.9612,2585,416,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near our society clubhouse,near our society clubhouse,False,MH03KL2468,MH03KL2468,True,,,True,,,True,,,True
+zero_shot,TEST036,True,True,17.9313,2584,245,own_damage,own_damage,True,high,high,True,,,True,,,True,Lower Parel,Lower Parel,True,,,True,,,True,False,False,True,,,True
+zero_shot,TEST037,True,True,17.172,2578,457,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,True,True,True
+zero_shot,TEST038,True,True,20.9756,2587,329,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Near the railway station,near the railway station,False,MH05RT3456,MH05RT3456,True,120000.0,120000.0,True,False,False,True,,,True
+zero_shot,TEST039,True,True,18.8018,2574,189,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST040,True,True,18.3962,2585,481,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the mall,outside the mall,False,,,True,,,True,True,True,True,,,True
+zero_shot,TEST041,True,True,19.9514,2583,272,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Santacruz,Santacruz,True,,,True,,,True,False,False,True,,,True
+zero_shot,TEST042,True,True,18.8873,2584,355,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
+zero_shot,TEST043,True,True,17.4623,2586,706,own_damage,glass_only,False,medium,medium,True,,,True,,,True,,near the office,False,,,True,,,True,,,True,,,True
+zero_shot,TEST044,True,True,23.0694,2583,383,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
+zero_shot,TEST045,True,True,2.0509,2583,276,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,,True,,,True
+zero_shot,TEST046,True,True,18.1569,2584,489,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,near the railway crossing,False,,,True,,,True,,,True,,,True
+zero_shot,TEST047,True,True,0.7249,2588,266,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
+zero_shot,TEST048,True,True,1.2037,2585,492,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST049,True,True,0.7687,2586,331,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,,False,MH04CD7788,MH04CD7788,True,,,True,,,True,,,True
+zero_shot,TEST050,True,True,2.0948,2582,207,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST051,True,True,17.3071,2586,474,own_damage,own_damage,True,high,high,True,,,True,,,True,Near the flyover,near the flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
+zero_shot,TEST052,True,True,20.2184,2576,282,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,,False,,,True,,,True,,,True,True,True,True
+zero_shot,TEST053,True,True,18.2741,2589,500,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
+zero_shot,TEST054,True,True,18.9252,2574,192,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST055,True,True,19.078,2583,301,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
+zero_shot,TEST056,True,True,17.0208,2586,284,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
+zero_shot,TEST057,True,True,19.9942,2582,266,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,parking area,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
+zero_shot,TEST058,True,True,18.0822,2580,231,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+zero_shot,TEST059,True,True,19.1347,2578,354,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,near the petrol pump,False,,,True,,,True,True,True,True,,,True
+zero_shot,TEST060,True,True,18.1768,2577,201,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
 few_shot_k3,TEST001,True,True,22.0771,2970,258,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
 few_shot_k3,TEST002,True,True,19.8504,2966,205,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
 few_shot_k3,TEST003,True,True,22.2282,2968,370,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
@@ -103,3 +103,259 @@ few_shot_k3,TEST041,True,True,21.982,2972,205,own_damage,own_damage,True,medium,
 few_shot_k3,TEST042,True,True,0.9862,2973,310,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
 few_shot_k3,TEST043,True,True,20.6509,2975,755,own_damage,glass_only,False,medium,medium,True,,,True,,,True,,near the office,False,,,True,,,True,,,True,,,True
 few_shot_k3,TEST044,True,True,25.2032,2972,266,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
+few_shot_k3,TEST045,True,True,0.9673,2972,224,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,False,False,,,True
+few_shot_k3,TEST046,True,True,1.13,2973,465,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,railway crossing,False,,,True,,,True,,,True,,,True
+few_shot_k3,TEST047,True,True,7.1458,2977,226,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
+few_shot_k3,TEST048,True,True,0.9008,2974,492,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k3,TEST049,True,True,22.1643,2975,407,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,,False,MH04CD7788,MH04CD7788,True,,,True,,,True,,,True
+few_shot_k3,TEST050,True,True,23.7906,2971,179,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k3,TEST051,True,True,0.9788,2975,501,own_damage,own_damage,True,high,high,True,,,True,,,True,Near the flyover,flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
+few_shot_k3,TEST052,True,True,22.2329,2965,227,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,outside the gym,False,,,True,,,True,,,True,True,True,True
+few_shot_k3,TEST053,True,True,21.0103,2978,322,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
+few_shot_k3,TEST054,True,True,0.5937,2963,161,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k3,TEST055,True,True,20.2068,2972,375,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
+few_shot_k3,TEST056,True,True,22.1971,2975,331,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
+few_shot_k3,TEST057,True,True,22.0986,2971,273,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,parking area,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
+few_shot_k3,TEST058,True,True,21.1985,2969,347,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k3,TEST059,True,True,22.3196,2967,266,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,petrol pump,False,,,True,,,True,True,True,True,,,True
+few_shot_k3,TEST060,True,True,19.8515,2966,154,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST001,True,True,22.1959,3226,333,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST002,True,True,24.0751,3222,235,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
+few_shot_k5,TEST003,True,True,23.0064,3224,208,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST004,True,True,23.0232,3222,247,third_party_liability,third_party_liability,True,high,high,True,ABC987654,ABC987654,True,,,True,Near the market,near the market,False,,,True,,,True,True,True,True,,,True
+few_shot_k5,TEST005,True,True,22.8783,3219,154,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST006,True,True,23.1815,3221,343,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Vashi,Vashi,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST007,True,True,23.1057,3228,343,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST008,True,True,24.1717,3217,286,theft,theft,True,medium,medium,True,,,True,,,True,Outside my building,outside my building,False,,,True,,,True,,,True,,,True
+few_shot_k5,TEST009,True,True,22.0876,3224,291,own_damage,own_damage,True,medium,medium,True,MOTOR556677,MOTOR556677,True,,,True,Near the airport,the airport,False,,,True,32500.0,32500.0,True,,,True,,,True
+few_shot_k5,TEST010,True,True,23.7577,3219,188,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST011,True,True,22.922,3230,360,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Dadar,Dadar,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST012,True,True,23.9772,3225,442,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST013,True,True,24.0486,3222,211,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST014,True,True,22.9602,3226,293,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST015,True,True,0.8711,3226,310,theft,theft,True,medium,medium,True,,,True,,,True,Society parking,society parking,False,MH01XY9090,MH01XY9090,True,,,True,,,True,False,False,True
+few_shot_k5,TEST016,True,True,0.7772,3227,474,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the bus stop,bus stop,False,MH03AB1122,MH03AB1122,True,,,True,True,True,True,,,True
+few_shot_k5,TEST017,True,True,23.9283,3227,243,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,27000.0,27000.0,True,,,True,,,True
+few_shot_k5,TEST018,True,True,22.833,3220,171,glass_only,not_a_claim,False,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST019,True,True,22.5439,3216,147,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST020,True,True,0.8673,3224,253,own_damage,own_damage,True,high,high,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST021,True,True,22.0495,3230,278,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Ghatkopar,Ghatkopar,True,,,True,65000.0,65000.0,True,False,False,True,,,True
+few_shot_k5,TEST022,True,True,23.0526,3224,310,theft,theft,True,medium,medium,True,,,True,,,True,Outside the restaurant,outside the restaurant,False,,,True,,,True,,,True,False,False,True
+few_shot_k5,TEST023,True,True,23.0072,3226,307,third_party_liability,third_party_liability,True,medium,medium,True,CAR908172,CAR908172,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST024,True,True,0.5294,3221,217,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST025,True,True,22.6878,3216,148,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST026,True,True,22.6155,3227,284,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST027,True,True,0.7489,3236,274,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Kurla,Kurla,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST028,True,True,0.6164,3227,232,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,1250000.0,1250000.0,True,,,True,,,True
+few_shot_k5,TEST029,True,True,0.929,3227,343,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,False,False,True
+few_shot_k5,TEST030,True,True,22.2673,3238,331,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Parking space,,False,MH02PQ7788,MH02PQ7788,True,,,True,False,False,True,,,True
+few_shot_k5,TEST031,True,True,23.9082,3226,225,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Borivali,Borivali,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST032,True,True,0.5146,3222,353,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the supermarket,outside the supermarket,False,,,True,,,True,True,True,True,,,True
+few_shot_k5,TEST033,True,True,0.672,3219,215,theft,theft,True,medium,medium,True,,,True,,,True,Office basement parking,office basement parking,False,,,True,,,True,,,True,True,True,True
+few_shot_k5,TEST034,True,True,0.6689,3218,128,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST035,True,True,19.9446,3230,297,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near our society clubhouse,society clubhouse,False,MH03KL2468,MH03KL2468,True,,,True,,,True,,,True
+few_shot_k5,TEST036,True,True,0.8183,3229,229,own_damage,own_damage,True,high,high,True,,,True,,,True,Lower Parel,Lower Parel,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST037,True,True,22.9987,3223,247,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,True,True,True
+few_shot_k5,TEST038,True,True,0.865,3232,261,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Near the railway station,railway station,False,MH05RT3456,MH05RT3456,True,120000.0,120000.0,True,False,False,True,,,True
+few_shot_k5,TEST039,True,True,21.6874,3219,150,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST040,True,True,23.0997,3230,494,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the mall,outside the mall,False,,,True,,,True,True,True,True,,,True
+few_shot_k5,TEST041,True,True,0.9053,3228,265,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Santacruz,Santacruz,True,,,True,,,True,False,False,True,,,True
+few_shot_k5,TEST042,True,True,24.0836,3229,364,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
+few_shot_k5,TEST043,True,True,24.3192,3231,634,own_damage,glass_only,False,medium,medium,True,,,True,,,True,,near the office,False,,,True,,,True,,,True,,,True
+few_shot_k5,TEST044,True,True,2.8299,3228,272,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
+few_shot_k5,TEST045,True,True,0.4951,3228,228,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,,True,,,True
+few_shot_k5,TEST046,True,True,0.8005,3229,476,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,railway crossing,False,,,True,,,True,,,True,,,True
+few_shot_k5,TEST047,True,True,22.908,3233,287,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
+few_shot_k5,TEST048,True,True,0.8184,3230,384,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST049,True,True,1.0531,3231,364,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,,False,MH04CD7788,MH04CD7788,True,,,True,,,True,,,True
+few_shot_k5,TEST050,True,True,22.6177,3227,178,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST051,True,True,0.863,3231,404,own_damage,third_party_liability,False,high,high,True,,,True,,,True,Near the flyover,flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
+few_shot_k5,TEST052,True,True,1.7787,3221,302,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,outside the gym,False,,,True,,,True,,,True,True,True,True
+few_shot_k5,TEST053,True,True,21.656,3234,267,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
+few_shot_k5,TEST054,True,True,0.9637,3219,168,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST055,True,True,21.8059,3228,216,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
+few_shot_k5,TEST056,True,True,0.4776,3231,319,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
+few_shot_k5,TEST057,True,True,0.8662,3227,256,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,parking area,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
+few_shot_k5,TEST058,True,True,21.754,3225,223,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k5,TEST059,True,True,23.7422,3223,282,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,petrol pump,False,,,True,,,True,True,True,True,,,True
+few_shot_k5,TEST060,True,True,0.5719,3222,154,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST001,True,True,2.1564,3582,339,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST002,True,True,27.0289,3578,249,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
+few_shot_k8,TEST003,True,True,25.1701,3580,207,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST004,True,True,26.343,3578,293,third_party_liability,third_party_liability,True,high,high,True,ABC987654,ABC987654,True,,,True,Near the market,market,False,,,True,,,True,True,True,True,,,True
+few_shot_k8,TEST005,True,True,23.9497,3575,178,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST006,True,True,0.5294,3577,222,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Vashi,Vashi,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST007,True,True,26.2923,3584,390,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST008,True,True,1.2103,3573,402,theft,theft,True,medium,medium,True,,,True,,,True,Outside my building,outside my building,False,,,True,,,True,,,True,,,True
+few_shot_k8,TEST009,True,True,0.7118,3580,263,own_damage,own_damage,True,medium,medium,True,MOTOR556677,MOTOR556677,True,,,True,Near the airport,airport,False,,,True,32500.0,32500.0,True,,,True,,,True
+few_shot_k8,TEST010,True,True,21.1577,3575,233,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST011,True,True,25.153,3586,312,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Dadar,Dadar,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST012,True,True,27.8149,3581,469,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST013,True,True,27.2673,3578,197,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST014,True,True,24.0657,3582,304,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST015,True,True,3.039,3582,272,theft,theft,True,medium,medium,True,,,True,,,True,Society parking,society parking,False,MH01XY9090,MH01XY9090,True,,,True,,,True,False,False,True
+few_shot_k8,TEST016,True,True,25.3604,3583,336,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the bus stop,bus stop,False,MH03AB1122,MH03AB1122,True,,,True,True,True,True,,,True
+few_shot_k8,TEST017,True,True,27.1023,3583,253,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,27000.0,27000.0,True,,False,False,,,True
+few_shot_k8,TEST018,True,True,0.9151,3576,220,glass_only,not_a_claim,False,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST019,True,True,23.9986,3572,198,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST020,True,True,25.0537,3580,219,own_damage,own_damage,True,high,high,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST021,True,True,26.1766,3586,220,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Ghatkopar,Ghatkopar,True,,,True,65000.0,65000.0,True,False,False,True,,,True
+few_shot_k8,TEST022,True,True,26.4337,3580,547,theft,theft,True,medium,medium,True,,,True,,,True,Outside the restaurant,outside the restaurant,False,,,True,,,True,,,True,False,False,True
+few_shot_k8,TEST023,True,True,28.1202,3582,327,third_party_liability,third_party_liability,True,medium,medium,True,CAR908172,CAR908172,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST024,True,True,0.747,3577,240,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST025,True,True,0.7292,3572,148,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST026,True,True,0.9278,3583,230,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST027,True,True,25.2352,3592,328,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Kurla,Kurla,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST028,True,True,1.0097,3583,296,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,1250000.0,1250000.0,True,,,True,,,True
+few_shot_k8,TEST029,True,True,26.1599,3583,307,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,False,False,True
+few_shot_k8,TEST030,True,True,25.2368,3594,338,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Parking space,,False,MH02PQ7788,MH02PQ7788,True,,,True,False,False,True,,,True
+few_shot_k8,TEST031,True,True,3.0768,3582,268,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Borivali,Borivali,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST032,False,False,25.975,3578,2048,third_party_liability,,False,high,,False,,,True,,,True,Outside the supermarket,,False,,,True,,,True,True,,False,,,True
+few_shot_k8,TEST033,True,True,14.0386,3575,270,theft,theft,True,medium,medium,True,,,True,,,True,Office basement parking,office basement parking,False,,,True,,,True,,,True,True,True,True
+few_shot_k8,TEST034,True,True,1.0088,3574,148,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST035,True,True,31.0232,3586,348,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near our society clubhouse,society clubhouse,False,MH03KL2468,MH03KL2468,True,,,True,,,True,,,True
+few_shot_k8,TEST036,True,True,0.9554,3585,235,own_damage,own_damage,True,high,high,True,,,True,,,True,Lower Parel,Lower Parel,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST037,True,True,26.0809,3579,293,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,True,True,True
+few_shot_k8,TEST038,True,True,26.7031,3588,370,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Near the railway station,railway station,False,MH05RT3456,MH05RT3456,True,120000.0,120000.0,True,False,False,True,,,True
+few_shot_k8,TEST039,True,True,25.8198,3575,150,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST040,True,True,25.6753,3586,636,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the mall,outside the mall,False,,,True,,,True,True,True,True,,,True
+few_shot_k8,TEST041,True,True,3.0954,3584,312,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Santacruz,Santacruz,True,,,True,,,True,False,False,True,,,True
+few_shot_k8,TEST042,True,True,25.8691,3585,253,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
+few_shot_k8,TEST043,True,True,17.1553,3587,703,own_damage,glass_only,False,medium,medium,True,,,True,,,True,,office,False,,,True,,,True,,,True,,,True
+few_shot_k8,TEST044,True,True,36.2842,3584,246,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
+few_shot_k8,TEST045,True,True,1.5423,3584,300,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,,True,,,True
+few_shot_k8,TEST046,True,True,26.3825,3585,383,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,railway crossing,False,,,True,,,True,,False,False,,,True
+few_shot_k8,TEST047,True,True,17.0666,3589,225,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
+few_shot_k8,TEST048,True,True,2.1142,3586,688,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST049,True,True,36.1142,3587,496,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,traffic signal,False,MH04CD7788,MH04CD7788,True,,,True,,,True,,,True
+few_shot_k8,TEST050,True,True,3.0484,3583,188,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST051,True,True,1.8004,3587,612,own_damage,own_damage,True,high,high,True,,,True,,,True,Near the flyover,flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
+few_shot_k8,TEST052,True,True,0.9847,3577,294,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,outside the gym,False,,,True,,,True,,,True,True,True,True
+few_shot_k8,TEST053,True,True,17.9879,3590,299,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
+few_shot_k8,TEST054,True,True,35.0346,3575,187,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST055,True,True,0.7373,3584,305,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
+few_shot_k8,TEST056,True,True,25.2323,3587,266,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
+few_shot_k8,TEST057,True,True,1.0128,3583,235,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,parking area,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
+few_shot_k8,TEST058,True,True,23.3124,3581,338,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+few_shot_k8,TEST059,True,True,1.0738,3579,303,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,petrol pump,False,,,True,,,True,True,True,True,,,True
+few_shot_k8,TEST060,True,True,26.0894,3578,206,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST001,True,True,7.033,1825,370,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
+cot_original,TEST002,True,True,12.9736,1821,352,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
+cot_original,TEST003,True,True,13.2498,1823,425,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
+cot_original,TEST004,True,True,14.1119,1821,472,third_party_liability,third_party_liability,True,high,high,True,ABC987654,ABC987654,True,,,True,Near the market,near the market,False,,,True,,,True,True,True,True,,,True
+cot_original,TEST005,True,True,19.0086,1818,310,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST006,True,True,13.0735,1820,446,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Vashi,near Vashi,False,,,True,,,True,False,False,True,,,True
+cot_original,TEST007,True,True,14.3035,1827,467,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST008,True,True,14.1976,1816,535,theft,glass_only,False,medium,medium,True,,,True,,,True,Outside my building,,False,,,True,,,True,,,True,,,True
+cot_original,TEST009,True,True,1.0469,1823,383,own_damage,own_damage,True,medium,medium,True,MOTOR556677,MOTOR556677,True,,,True,Near the airport,near the airport,False,,,True,32500.0,32500.0,True,,,True,,,True
+cot_original,TEST010,True,True,8.0952,1818,398,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST011,True,True,0.782,1829,423,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Dadar,near Dadar,False,,,True,,,True,False,False,True,,,True
+cot_original,TEST012,True,True,4.754,1824,376,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+cot_original,TEST013,True,True,13.1982,1821,451,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST014,True,True,0.6788,1825,395,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,50000.0,False,,,True,,,True
+cot_original,TEST015,True,True,13.8444,1825,405,theft,theft,True,medium,medium,True,,,True,,,True,Society parking,society parking,False,MH01XY9090,MH01XY9090,True,,,True,,False,False,False,False,True
+cot_original,TEST016,True,True,0.7666,1826,382,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the bus stop,near the bus stop,False,MH03AB1122,MH03AB1122,True,,,True,True,True,True,,,True
+cot_original,TEST017,True,True,0.7432,1826,327,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,27000.0,27000.0,True,,False,False,,,True
+cot_original,TEST018,True,True,0.9881,1819,312,glass_only,not_a_claim,False,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST019,True,True,10.1031,1815,379,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,False,False,,,True
+cot_original,TEST020,True,True,1.0878,1823,416,own_damage,own_damage,True,high,high,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+cot_original,TEST021,True,True,9.282,1829,380,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Ghatkopar,Ghatkopar,True,,,True,65000.0,65000.0,True,False,False,True,,,True
+cot_original,TEST022,True,True,3.0401,1823,420,theft,theft,True,medium,medium,True,,,True,,,True,Outside the restaurant,,False,,,True,,,True,,False,False,False,False,True
+cot_original,TEST023,True,True,13.8546,1825,334,third_party_liability,third_party_liability,True,medium,medium,True,CAR908172,CAR908172,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+cot_original,TEST024,True,True,0.9194,1820,356,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST025,True,True,0.5794,1815,281,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST026,True,True,7.0671,1826,370,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,False,False,,,True
+cot_original,TEST027,True,True,16.722,1835,355,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Kurla,near Kurla,False,,,True,,,True,False,False,True,,,True
+cot_original,TEST028,True,True,1.0154,1826,441,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,1250000.0,1250000.0,True,,False,False,,,True
+cot_original,TEST029,True,True,10.1722,1826,512,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,False,False,True
+cot_original,TEST030,True,True,17.9891,1837,423,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Parking space,,False,MH02PQ7788,MH02PQ7788,True,,,True,False,False,True,,,True
+cot_original,TEST031,True,True,10.2,1825,426,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Borivali,near Borivali,False,,,True,,,True,False,False,True,,,True
+cot_original,TEST032,True,True,1.195,1821,553,third_party_liability,own_damage,False,high,medium,False,,,True,,,True,Outside the supermarket,,False,,,True,,,True,True,True,True,,,True
+cot_original,TEST033,True,True,14.2956,1818,425,theft,theft,True,medium,medium,True,,,True,,,True,Office basement parking,office basement parking,False,,,True,,,True,,,True,True,True,True
+cot_original,TEST034,True,True,4.1649,1817,365,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST035,True,True,1.1917,1829,455,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near our society clubhouse,near our society clubhouse,False,MH03KL2468,MH03KL2468,True,,,True,,,True,,,True
+cot_original,TEST036,True,True,0.9893,1828,382,own_damage,own_damage,True,high,high,True,,,True,,,True,Lower Parel,Lower Parel,True,,,True,,,True,False,False,True,,,True
+cot_original,TEST037,True,True,0.6811,1822,380,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,False,False,True,True,True
+cot_original,TEST038,True,True,7.2347,1831,416,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Near the railway station,near the railway station,False,MH05RT3456,MH05RT3456,True,120000.0,120000.0,True,False,False,True,,,True
+cot_original,TEST039,True,True,1.6751,1818,314,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST040,True,True,0.9775,1829,386,third_party_liability,own_damage,False,high,medium,False,,,True,,,True,Outside the mall,outside the mall,False,,,True,,,True,True,False,False,,,True
+cot_original,TEST041,True,True,1.3169,1827,351,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Santacruz,Santacruz,True,,,True,,,True,False,False,True,,,True
+cot_original,TEST042,True,True,1.2232,1828,511,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,my apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
+cot_original,TEST043,True,True,9.9441,1830,975,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,near home,False,,,True,,,True,,,True,,,True
+cot_original,TEST044,True,True,19.1146,1827,404,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
+cot_original,TEST045,True,True,14.194,1827,403,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,,True,,,True
+cot_original,TEST046,True,True,1.0815,1828,440,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,near the railway crossing,False,,,True,,,True,,False,False,,,True
+cot_original,TEST047,True,True,0.8989,1832,413,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
+cot_original,TEST048,True,True,1.91,1829,906,theft,not_a_claim,False,medium,low,False,,,True,,,True,,,True,,,True,,,True,,False,False,,,True
+cot_original,TEST049,True,True,1.0044,1830,393,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,,False,MH04CD7788,MH04CD7788,True,,,True,,False,False,,,True
+cot_original,TEST050,True,True,13.3043,1826,368,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST051,True,True,13.5335,1830,488,own_damage,third_party_liability,False,high,high,True,,,True,,,True,Near the flyover,near the flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
+cot_original,TEST052,True,True,13.5836,1820,387,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,outside the gym,False,,,True,,,True,,,True,True,True,True
+cot_original,TEST053,True,True,14.5022,1833,390,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
+cot_original,TEST054,True,True,16.35,1818,322,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_original,TEST055,True,True,10.5072,1827,505,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
+cot_original,TEST056,True,True,0.927,1830,411,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,near Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
+cot_original,TEST057,True,True,1.2064,1826,439,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
+cot_original,TEST058,True,True,0.8819,1824,329,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,False,False,,,True
+cot_original,TEST059,True,True,0.8486,1822,454,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,near the petrol pump,False,,,True,,,True,True,True,True,,,True
+cot_original,TEST060,True,True,10.1375,1821,442,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST001,True,True,1.2246,2701,421,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Powai,Powai,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST002,True,True,0.9424,2697,251,theft,theft,True,medium,medium,True,,,True,,,True,Workplace parking,,False,,,True,,,True,,,True,True,True,True
+cot_revised,TEST003,True,True,0.9686,2699,364,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Navi Mumbai,Navi Mumbai,True,,,True,,,True,,,True,,,True
+cot_revised,TEST004,True,True,1.0534,2697,505,third_party_liability,third_party_liability,True,high,high,True,ABC987654,ABC987654,True,,,True,Near the market,near the market,False,,,True,,,True,True,True,True,,,True
+cot_revised,TEST005,True,True,21.608,2694,192,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST006,True,True,19.0082,2696,312,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Vashi,near Vashi,False,,,True,,,True,False,False,True,,,True
+cot_revised,TEST007,True,True,1.2061,2703,575,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST008,True,True,22.7126,2692,802,theft,glass_only,False,medium,medium,True,,,True,,,True,Outside my building,outside my building,False,,,True,,,True,,,True,,,True
+cot_revised,TEST009,True,True,22.1991,2699,307,own_damage,own_damage,True,medium,medium,True,MOTOR556677,MOTOR556677,True,,,True,Near the airport,near the airport,False,,,True,32500.0,32500.0,True,,,True,,,True
+cot_revised,TEST010,True,True,20.8636,2694,224,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST011,True,True,18.2873,2705,462,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Dadar,near Dadar,False,,,True,,,True,False,False,True,,,True
+cot_revised,TEST012,True,True,21.5135,2700,437,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST013,True,True,19.1307,2697,328,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST014,True,True,20.3771,2701,510,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST015,True,True,20.2455,2701,374,theft,theft,True,medium,medium,True,,,True,,,True,Society parking,society parking,False,MH01XY9090,MH01XY9090,True,,,True,,,True,False,False,True
+cot_revised,TEST016,True,True,19.9645,2702,347,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the bus stop,near the bus stop,False,MH03AB1122,MH03AB1122,True,,,True,True,True,True,,,True
+cot_revised,TEST017,True,True,17.1272,2702,390,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,27000.0,27000.0,True,,,True,,,True
+cot_revised,TEST018,True,True,23.0905,2695,191,glass_only,not_a_claim,False,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST019,True,True,18.2864,2691,187,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST020,True,True,1.0922,2699,354,own_damage,own_damage,True,high,high,True,,,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST021,True,True,1.1881,2705,323,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Ghatkopar,near Ghatkopar,False,,,True,65000.0,65000.0,True,False,False,True,,,True
+cot_revised,TEST022,True,True,1.5056,2699,429,theft,theft,True,medium,medium,True,,,True,,,True,Outside the restaurant,,False,,,True,,,True,,,True,False,False,True
+cot_revised,TEST023,True,True,16.7417,2701,352,third_party_liability,third_party_liability,True,medium,medium,True,CAR908172,CAR908172,True,,,True,,,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST024,True,True,0.9463,2696,418,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST025,True,True,20.899,2691,172,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST026,True,True,18.3201,2702,404,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST027,True,True,20.2951,2711,291,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Kurla,Kurla,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST028,True,True,20.9371,2702,287,total_loss,total_loss,True,medium,medium,True,,,True,,,True,,,True,,,True,1250000.0,1250000.0,True,,,True,,,True
+cot_revised,TEST029,True,True,1.1045,2702,472,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,False,False,True
+cot_revised,TEST030,True,True,20.2923,2713,365,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Parking space,,False,MH02PQ7788,MH02PQ7788,True,,,True,False,False,True,,,True
+cot_revised,TEST031,True,True,17.7654,2701,318,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Borivali,near Borivali,False,,,True,,,True,False,False,True,,,True
+cot_revised,TEST032,True,True,1.0442,2697,454,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the supermarket,outside the supermarket,False,,,True,,,True,True,True,True,,,True
+cot_revised,TEST033,True,True,22.2696,2694,397,theft,theft,True,medium,medium,True,,,True,,,True,Office basement parking,office basement parking,False,,,True,,,True,,,True,True,True,True
+cot_revised,TEST034,True,True,0.544,2693,159,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST035,True,True,19.3991,2705,405,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near our society clubhouse,near our society clubhouse,False,MH03KL2468,MH03KL2468,True,,,True,,,True,,,True
+cot_revised,TEST036,True,True,0.7972,2704,417,own_damage,own_damage,True,high,high,True,,,True,,,True,Lower Parel,Lower Parel,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST037,True,True,18.1505,2698,431,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,True,True,True
+cot_revised,TEST038,True,True,1.8216,2707,333,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Near the railway station,near the railway station,False,MH05RT3456,MH05RT3456,True,120000.0,120000.0,True,False,False,True,,,True
+cot_revised,TEST039,True,True,21.04,2694,188,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST040,True,True,16.6418,2705,447,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Outside the mall,outside the mall,False,,,True,,,True,True,True,True,,,True
+cot_revised,TEST041,True,True,23.4256,2703,453,own_damage,own_damage,True,medium,medium,True,,,True,,,True,Santacruz,Santacruz,True,,,True,,,True,False,False,True,,,True
+cot_revised,TEST042,True,True,0.8436,2704,490,theft,theft,True,medium,medium,True,,,True,,,True,Apartment parking,my apartment parking,False,MH02GH5566,MH02GH5566,True,,,True,,,True,False,False,True
+cot_revised,TEST043,True,True,21.1553,2706,656,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,near home,False,,,True,,,True,,,True,,,True
+cot_revised,TEST044,True,True,20.5404,2703,286,total_loss,total_loss,True,medium,medium,True,POL778812,POL778812,True,,,True,,,True,,,True,675000.0,675000.0,True,,,True,,,True
+cot_revised,TEST045,True,True,0.8867,2703,361,glass_only,glass_only,True,medium,medium,True,,,True,,,True,,,True,MH01AB9090,MH01AB9090,True,,,True,,,True,,,True
+cot_revised,TEST046,True,True,1.0655,2704,492,third_party_liability,third_party_liability,True,medium,medium,True,,,True,,,True,Near the railway crossing,near the railway crossing,False,,,True,,,True,,,True,,,True
+cot_revised,TEST047,True,True,20.5817,2708,336,own_damage,own_damage,True,medium,medium,True,,,True,,,True,,,True,,,True,90000.0,90000.0,True,False,False,True,,,True
+cot_revised,TEST048,True,True,21.4397,2705,488,theft,theft,True,medium,medium,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST049,True,True,1.6198,2706,885,own_damage,own_damage,True,medium,medium,True,,,True,,,True,At a traffic signal,traffic signal,False,MH04CD7788,MH04CD7788,True,,,True,,,True,,,True
+cot_revised,TEST050,True,True,24.1071,2702,207,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST051,True,True,1.164,2706,578,own_damage,third_party_liability,False,high,high,True,,,True,,,True,Near the flyover,near the flyover,False,MH02AB3456,MH02AB3456,True,,,True,True,True,True,,,True
+cot_revised,TEST052,True,True,19.4017,2696,493,theft,theft,True,medium,medium,True,,,True,,,True,Outside the gym,outside the gym,False,,,True,,,True,,,True,True,True,True
+cot_revised,TEST053,True,True,20.1411,2709,387,total_loss,total_loss,True,medium,medium,True,MC123456,MC123456,True,,,True,,,True,,,True,925000.0,925000.0,True,,,True,,,True
+cot_revised,TEST054,True,True,18.9981,2694,191,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST055,True,True,21.1463,2703,449,glass_only,glass_only,True,medium,medium,True,,,True,,,True,Near Juhu beach,near Juhu beach,False,MH02ZZ1234,MH02ZZ1234,True,,,True,,,True,,,True
+cot_revised,TEST056,True,True,19.2153,2706,522,own_damage,own_damage,True,high,high,True,,,True,,,True,Near Airoli,near Airoli,False,MH43CD7890,MH43CD7890,True,,,True,False,False,True,,,True
+cot_revised,TEST057,True,True,21.2741,2702,543,theft,theft,True,medium,medium,True,,,True,,,True,Parking area,parking area,False,MH01PQ5678,MH01PQ5678,True,,,True,,,True,True,True,True
+cot_revised,TEST058,True,True,2.1226,2700,430,glass_only,glass_only,True,medium,low,False,,,True,,,True,,,True,,,True,,,True,,,True,,,True
+cot_revised,TEST059,True,True,20.1181,2698,421,third_party_liability,third_party_liability,True,high,high,True,,,True,,,True,Near the petrol pump,near the petrol pump,False,,,True,,,True,True,True,True,,,True
+cot_revised,TEST060,True,True,1.0002,2697,204,not_a_claim,not_a_claim,True,low,low,True,,,True,,,True,,,True,,,True,,,True,,,True,,,True

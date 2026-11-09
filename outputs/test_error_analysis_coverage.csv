@@ -1,0 +1,17 @@
+prompt_strategy,run,records_expected,records_found,missing_records
+zero_shot_v2,1,60,60,0
+zero_shot_v2,2,60,60,0
+zero_shot_v2,3,60,60,0
+few_shot_k3,1,60,60,0
+few_shot_k3,2,60,60,0
+few_shot_k3,3,60,60,0
+few_shot_k5,1,60,60,0
+few_shot_k5,2,60,60,0
+few_shot_k5,3,60,60,0
+few_shot_k8,1,60,60,0
+few_shot_k8,2,60,60,0
+few_shot_k8,3,60,60,0
+cot_revised,1,60,60,0
+cot_revised,2,60,60,0
+cot_revised,3,60,60,0
+cot_original,1,60,60,0

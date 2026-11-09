@@ -1,0 +1,7 @@
+strategy,runs_available,records_compared,classification_agreement,full_output_agreement,note
+zero_shot_v2,3,60,1.0,0.9166666666666666,Exact agreement across all available runs.
+few_shot_k3,3,60,0.9833333333333333,0.95,Exact agreement across all available runs.
+few_shot_k5,3,60,0.9833333333333333,0.9333333333333333,Exact agreement across all available runs.
+few_shot_k8,3,60,0.975,0.9,Exact agreement across all available runs.
+cot_revised,3,60,0.9833333333333333,0.9,Exact agreement across all available runs.
+cot_original,1,0,,,Only one run available.
